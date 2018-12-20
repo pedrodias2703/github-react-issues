@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import IssueRow from './IssueRow';
 
+// component that will show the table static content for the requested fiels
 const IssueTable = ({ issues = [] }) => {
   return (
     <Table celled>
@@ -18,17 +19,19 @@ const IssueTable = ({ issues = [] }) => {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {issues.length < 1 && (
+        {issues.length < 1 && ( // show message if no records were received
           <Table.Row>
             <Table.Cell colSpan="5">No issues found.</Table.Cell>
           </Table.Row>
         )}
-        {issues.length > 0 && issues.map((issue) => <IssueRow key={issue.number} issue={issue} />)}
+        {// if records were received, iterate over them and show the row component
+        issues.length > 0 && issues.map((issue) => <IssueRow key={issue.number} issue={issue} />)}
       </Table.Body>
     </Table>
   );
 };
 
+// the issues prop should be an array
 IssueTable.propTypes = {
   issues: PropTypes.array
 };

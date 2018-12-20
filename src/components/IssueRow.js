@@ -4,6 +4,7 @@ import { Table } from 'semantic-ui-react';
 import { IssueModel } from '../models/index';
 
 const IssueRow = ({ issue = {} }) => {
+  // helper that prints a list of labels
   const printLabels = (labels) => {
     if (!labels.length) {
       return 'No labels';
@@ -11,7 +12,10 @@ const IssueRow = ({ issue = {} }) => {
     return <li>{labels.map((label) => label.name)}</li>;
   };
 
+  // creates a record based on issue model
   const recordIssue = new IssueModel({ ...issue });
+
+  // displays the table rows, based on the issue object received
   return (
     <Table.Row key={recordIssue.number}>
       <Table.Cell>

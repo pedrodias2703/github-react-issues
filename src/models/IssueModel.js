@@ -1,5 +1,8 @@
 import { Record } from 'immutable';
 
+// defines what we would expect from an issue object
+// useful for setting default values in case they are missing
+// makes our app more predictable
 export const IssueModel = new Record({
   number: 0,
   title: 'Standard Issue',

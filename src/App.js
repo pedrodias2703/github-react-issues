@@ -11,6 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // initial state
     this.state = {
       loading: true,
       error: false,
@@ -22,6 +23,7 @@ class App extends Component {
   }
 
   /* Lifecycle */
+  // once the component is mounted, call the api service to set total pages and process results
   componentDidMount() {
     getIssuesService()
       .then((response) => {
@@ -34,6 +36,7 @@ class App extends Component {
       .catch(this.handleResponseError);
   }
 
+  // the component should update only when page chages. then, we will call the api with the new page information
   componentDidUpdate(prevProps, prevState) {
     const { activePage } = this.state;
     if (activePage !== prevState.activePage) {
@@ -44,6 +47,7 @@ class App extends Component {
   }
 
   /* Helpers */
+  // promise resolved
   handleResposeSuccess = (response) => {
     this.setState({
       loading: false,
@@ -53,6 +57,7 @@ class App extends Component {
     });
   };
 
+  // promise catch
   handleResponseError = (error) => {
     this.setState({
       loading: false,
@@ -62,6 +67,7 @@ class App extends Component {
     });
   };
 
+  // get the total pages based on api response
   extractPaginationInfo = (link) => {
     const totalPages = link
       .split(',')
@@ -71,6 +77,7 @@ class App extends Component {
     return totalPages;
   };
 
+  // fired by pagination component when page changes
   handlePageChange = (e, p) => {
     const { activePage } = p;
     this.setState({
@@ -82,6 +89,7 @@ class App extends Component {
   render() {
     const { loading, error, message, data, totalPages, activePage } = this.state;
 
+    // If api call still in progress, render the spinner
     if (loading) {
       return (
         <Dimmer active>
@@ -90,6 +98,7 @@ class App extends Component {
       );
     }
 
+    // Show an error message if something went wrong
     if (error) {
       return (
         <Container>

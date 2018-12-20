@@ -5,6 +5,7 @@ const DEFAULT_URL = 'https://api.github.com/repos/facebook/react/issues';
 let lastModified = new Date().toLocaleString();
 let etag = '';
 
+// service layer to make requests to api
 export const getIssuesService = ({ url = DEFAULT_URL, page = 1 } = {}) => {
   const options = {
     headers: { 'If-Modified-Since': lastModified, 'If-None-Match': etag },
