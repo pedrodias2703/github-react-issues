@@ -1,1 +1,1 @@
-export { Issue } from './Issue';
+export { IssueModel } from './IssueModel';

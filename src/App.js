@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Table, Dimmer, Loader } from 'semantic-ui-react';
-import axios from 'axios';
+import { Dimmer, Loader, Container, Header, Message, Pagination } from 'semantic-ui-react';
 
-import { Issue } from './models/index';
+import { getIssuesService } from './services/IssueService';
+import IssueTable from './components/IssueTable';
 
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
@@ -14,54 +14,73 @@ class App extends Component {
     this.state = {
       loading: true,
       error: false,
-      data: []
+      message: '',
+      data: [],
+      activePage: 1,
+      totalPages: 1
     };
   }
 
+  /* Lifecycle */
   componentDidMount() {
-    const URL = 'https://api.github.com/repos/facebook/react/issues';
-    axios
-      .get(URL)
+    getIssuesService()
       .then((response) => {
         this.setState({
-          loading: false,
-          error: false,
-          data: response.data
+          totalPages: this.extractPaginationInfo(response.headers.link) || 1
         });
+        return response;
       })
-      .catch(() => {
-        this.setState({
-          loading: false,
-          error: true,
-          data: []
-        });
-      });
+      .then(this.handleResposeSuccess)
+      .catch(this.handleResponseError);
   }
 
-  printLabels(labels) {
-    if (!labels.length) {
-      return 'No labels';
+  componentDidUpdate(prevProps, prevState) {
+    const { activePage } = this.state;
+    if (activePage !== prevState.activePage) {
+      getIssuesService({ page: activePage })
+        .then(this.handleResposeSuccess)
+        .catch(this.handleResponseError);
     }
-
-    return <li>{labels.map((label) => label.name)}</li>;
   }
 
-  printIssue(issue) {
-    const recordIssue = new Issue({ ...issue });
-    return (
-      <Table.Row key={recordIssue.number}>
-        <Table.Cell>{recordIssue.number}</Table.Cell>
-        <Table.Cell>{recordIssue.title}</Table.Cell>
-        <Table.Cell>{recordIssue.created_at}</Table.Cell>
-        <Table.Cell>{recordIssue.updated_at}</Table.Cell>
-        <Table.Cell>{this.printLabels(recordIssue.labels)}</Table.Cell>
-        <Table.Cell>{recordIssue.state.toUpperCase()}</Table.Cell>
-      </Table.Row>
-    );
-  }
+  /* Helpers */
+  handleResposeSuccess = (response) => {
+    this.setState({
+      loading: false,
+      error: false,
+      message: '',
+      data: response.data
+    });
+  };
+
+  handleResponseError = (error) => {
+    this.setState({
+      loading: false,
+      error: true,
+      message: error.response.data.message,
+      data: []
+    });
+  };
+
+  extractPaginationInfo = (link) => {
+    const totalPages = link
+      .split(',')
+      .reverse()[0]
+      .split(';')[0]
+      .match(/page=(?<page>\d+)/).groups.page;
+    return totalPages;
+  };
+
+  handlePageChange = (e, p) => {
+    const { activePage } = p;
+    this.setState({
+      activePage,
+      loading: true
+    });
+  };
 
   render() {
-    const { loading, error, data } = this.state;
+    const { loading, error, message, data, totalPages, activePage } = this.state;
 
     if (loading) {
       return (
@@ -72,26 +91,27 @@ class App extends Component {
     }
 
     if (error) {
-      return <h1>OOPS! Something went wrong...</h1>;
+      return (
+        <Container>
+          <Message>
+            <Message.Header>OOPS! Something went wrong...</Message.Header>
+            <p>{message}</p>
+          </Message>
+        </Container>
+      );
     }
 
-    console.log(data);
     return (
       <div className="App">
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Issue #</Table.HeaderCell>
-              <Table.HeaderCell>Title</Table.HeaderCell>
-              <Table.HeaderCell>Created At</Table.HeaderCell>
-              <Table.HeaderCell>Updated At</Table.HeaderCell>
-              <Table.HeaderCell>Labels</Table.HeaderCell>
-              <Table.HeaderCell>State</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body>{data.length && data.map((issue) => this.printIssue(issue))}</Table.Body>
-        </Table>
+        <Container>
+          <Header>Github React Issues</Header>
+          <IssueTable issues={[]} />
+          <Pagination
+            totalPages={totalPages}
+            activePage={activePage}
+            onPageChange={this.handlePageChange}
+          />
+        </Container>
       </div>
     );
   }
