@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-import IssueRow from './IssueRow';
+import IssueRow from './Row';
 
 // component that will show the table static content for the requested fiels
 const IssueTable = ({ issues = [] }) => {

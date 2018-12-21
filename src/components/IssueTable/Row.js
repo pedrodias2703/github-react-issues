@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
 
-import { IssueModel } from '../models/index';
+import { IssueModel } from '../../models/index';
 
 const IssueRow = ({ issue = {} }) => {
   // helper that prints a list of labels

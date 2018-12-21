@@ -1,1 +1,3 @@
-export { IssueModel } from './IssueModel';
+import IssueModel from './IssueModel';
+
+export { IssueModel };
