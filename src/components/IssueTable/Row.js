@@ -9,7 +9,13 @@ const IssueRow = ({ issue = {} }) => {
     if (!labels.length) {
       return 'No labels';
     }
-    return <li>{labels.map((label) => label.name)}</li>;
+    return (
+      <ul>
+        {labels.map((label, index) => (
+          <li key={index}>{label.name}</li>
+        ))}
+      </ul>
+    );
   };
 
   // creates a record based on issue model

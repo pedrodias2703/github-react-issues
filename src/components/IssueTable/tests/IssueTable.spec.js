@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import IssueTable from '..';
 
@@ -50,17 +50,17 @@ const data = [
 
 describe('<IssueTable />', () => {
   it('should render correctly', () => {
-    const wrapper = mount(<IssueTable issues={data} />);
+    const wrapper = shallow(<IssueTable issues={data} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should show no issues found message if data is empty', () => {
-    const wrapper = mount(<IssueTable issues={[]} />);
+    const wrapper = shallow(<IssueTable issues={[]} />);
     expect(wrapper.html()).toContain('No issues found');
   });
 
   it('should show no issues found message if data is null', () => {
-    const wrapper = mount(<IssueTable />);
+    const wrapper = shallow(<IssueTable />);
     expect(wrapper.html()).toContain('No issues found');
   });
 });

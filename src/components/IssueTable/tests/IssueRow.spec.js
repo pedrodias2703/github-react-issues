@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import IssueRow from '../Row';
 
@@ -48,17 +48,29 @@ const data = {
 
 describe('<IssueRow />', () => {
   it('should render correctly', () => {
-    const wrapper = mount(<IssueRow issue={data} />);
+    const wrapper = shallow(<IssueRow issue={data} />);
     expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('ul')).toHaveLength(1);
+    expect(wrapper.find('li')).toHaveLength(data.labels.length);
+    expect(wrapper.find('a')).toHaveLength(1);
   });
 
   it('should show no issues found message if data is empty', () => {
-    const wrapper = mount(<IssueRow issue={{}} />);
+    const wrapper = shallow(<IssueRow issue={{}} />);
     expect(wrapper.html()).toContain('Standard Issue');
   });
 
   it('should show no issues found message if data is null', () => {
-    const wrapper = mount(<IssueRow />);
+    const wrapper = shallow(<IssueRow />);
     expect(wrapper.html()).toContain('Standard Issue');
+  });
+
+  it('should print no labels if no labels available', () => {
+    const newIssue = {
+      ...data,
+      labels: []
+    };
+    const wrapper = shallow(<IssueRow issue={newIssue} />);
+    expect(wrapper.html()).toContain('No labels');
   });
 });

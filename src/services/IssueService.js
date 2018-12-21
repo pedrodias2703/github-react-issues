@@ -7,12 +7,15 @@ let lastModified = new Date().toLocaleString();
 let etag = '';
 
 // service layer to make requests to api
-export const getIssuesService = ({ url = DEFAULT_URL, page = 1 } = {}) => {
-  const options = {
-    headers: { 'If-Modified-Since': lastModified, 'If-None-Match': etag },
-    params: { access_token: ACCESS_TOKEN, page }
+export const getIssuesService = ({ url = DEFAULT_URL, options = {} } = {}) => {
+  const { headers = {}, params = {}, ...opts } = options;
+  const { page = 1 } = params;
+  const localOptions = {
+    headers: { 'If-Modified-Since': lastModified, 'If-None-Match': etag, ...headers },
+    params: { access_token: ACCESS_TOKEN, page, ...params },
+    ...opts
   };
-  return axios.get(url, options).then((response) => {
+  return axios.get(url, localOptions).then((response) => {
     lastModified = response.headers['Last-Modified'];
     etag = response.headers['etag'] || response.headers['ETag'];
     return response;

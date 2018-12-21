@@ -10,7 +10,7 @@ class IssueContainer extends Component {
 
     // initial state
     this.state = {
-      loading: true,
+      loading: false,
       error: false,
       message: '',
       data: [],
@@ -20,31 +20,41 @@ class IssueContainer extends Component {
   }
 
   /* Lifecycle */
-  // once the component is mounted, call the api service to set total pages and process results
+  // once the component is mounted, set loading state and after that call the api service to set total pages and process results
   componentDidMount() {
-    getIssuesService()
-      .then((response) => {
-        this.setState({
-          totalPages: this.extractPaginationInfo(response.headers.link) || 1
-        });
-        return response;
-      })
-      .then(this.handleResposeSuccess)
-      .catch(this.handleResponseError);
+    this.setState(
+      {
+        loading: true
+      },
+      () => {
+        getIssuesService()
+          .then((response) => {
+            this.setState({
+              totalPages: this.extractPaginationInfo(response.headers.link) || 1
+            });
+            return response;
+          })
+          .then(this.handleResposeSuccess)
+          .catch(this.handleResponseError);
+      }
+    );
   }
 
   // the component should update only when page chages. then, we will call the api with the new page information
   componentDidUpdate(prevProps, prevState) {
     const { activePage } = this.state;
     if (activePage !== prevState.activePage) {
-      getIssuesService({ page: activePage })
+      const options = {
+        params: { page: activePage }
+      };
+      getIssuesService({ options })
         .then(this.handleResposeSuccess)
         .catch(this.handleResponseError);
     }
   }
 
   /* Helpers */
-  // promise resolved
+  // promise resolve
   handleResposeSuccess = (response) => {
     this.setState({
       loading: false,

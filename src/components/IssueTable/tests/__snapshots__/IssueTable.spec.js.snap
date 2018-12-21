@@ -1,0 +1,979 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IssueTable /> should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <IssueTable
+    issues={
+      Array [
+        Object {
+          "assignee": null,
+          "assignees": Array [],
+          "author_association": "CONTRIBUTOR",
+          "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+          "closed_at": null,
+          "comments": 2,
+          "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+          "created_at": "2018-12-20T13:40:35Z",
+          "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+          "html_url": "https://github.com/facebook/react/issues/14476",
+          "id": 393051225,
+          "labels": Array [
+            Object {
+              "color": "c2f27b",
+              "default": false,
+              "id": 1109410193,
+              "name": "Component: Hooks",
+              "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+              "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+            },
+            Object {
+              "color": "cc317c",
+              "default": false,
+              "id": 40929155,
+              "name": "Type: Question",
+              "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+              "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+            },
+          ],
+          "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+          "locked": false,
+          "milestone": null,
+          "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+          "number": 14476,
+          "repository_url": "https://api.github.com/repos/facebook/react",
+          "state": "open",
+          "title": "useCallback/useEffect support custom comparator",
+          "updated_at": "2018-12-20T16:40:00Z",
+          "url": "https://api.github.com/repos/facebook/react/issues/14476",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "as": "table",
+      "celled": true,
+      "children": Array [
+        <TableHeader
+          as="thead"
+        >
+          <TableRow
+            as="tr"
+            cellAs="td"
+          >
+            <TableHeaderCell
+              as="th"
+            >
+              Issue #
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Title
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Created At
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Updated At
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Labels
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              State
+            </TableHeaderCell>
+          </TableRow>
+        </TableHeader>,
+        <TableBody
+          as="tbody"
+        >
+          <IssueRow
+            issue={
+              Object {
+                "assignee": null,
+                "assignees": Array [],
+                "author_association": "CONTRIBUTOR",
+                "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                "closed_at": null,
+                "comments": 2,
+                "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                "created_at": "2018-12-20T13:40:35Z",
+                "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                "html_url": "https://github.com/facebook/react/issues/14476",
+                "id": 393051225,
+                "labels": Array [
+                  Object {
+                    "color": "c2f27b",
+                    "default": false,
+                    "id": 1109410193,
+                    "name": "Component: Hooks",
+                    "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                    "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                  },
+                  Object {
+                    "color": "cc317c",
+                    "default": false,
+                    "id": 40929155,
+                    "name": "Type: Question",
+                    "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                    "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                  },
+                ],
+                "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                "locked": false,
+                "milestone": null,
+                "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                "number": 14476,
+                "repository_url": "https://api.github.com/repos/facebook/react",
+                "state": "open",
+                "title": "useCallback/useEffect support custom comparator",
+                "updated_at": "2018-12-20T16:40:00Z",
+                "url": "https://api.github.com/repos/facebook/react/issues/14476",
+              }
+            }
+          />
+        </TableBody>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "thead",
+          "children": <TableRow
+            as="tr"
+            cellAs="td"
+          >
+            <TableHeaderCell
+              as="th"
+            >
+              Issue #
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Title
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Created At
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Updated At
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              Labels
+            </TableHeaderCell>
+            <TableHeaderCell
+              as="th"
+            >
+              State
+            </TableHeaderCell>
+          </TableRow>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "tr",
+            "cellAs": "td",
+            "children": Array [
+              <TableHeaderCell
+                as="th"
+              >
+                Issue #
+              </TableHeaderCell>,
+              <TableHeaderCell
+                as="th"
+              >
+                Title
+              </TableHeaderCell>,
+              <TableHeaderCell
+                as="th"
+              >
+                Created At
+              </TableHeaderCell>,
+              <TableHeaderCell
+                as="th"
+              >
+                Updated At
+              </TableHeaderCell>,
+              <TableHeaderCell
+                as="th"
+              >
+                Labels
+              </TableHeaderCell>,
+              <TableHeaderCell
+                as="th"
+              >
+                State
+              </TableHeaderCell>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "Issue #",
+              },
+              "ref": null,
+              "rendered": "Issue #",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "Title",
+              },
+              "ref": null,
+              "rendered": "Title",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "Created At",
+              },
+              "ref": null,
+              "rendered": "Created At",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "Updated At",
+              },
+              "ref": null,
+              "rendered": "Updated At",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "Labels",
+              },
+              "ref": null,
+              "rendered": "Labels",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": "th",
+                "children": "State",
+              },
+              "ref": null,
+              "rendered": "State",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": "tbody",
+          "children": Array [
+            false,
+            Array [
+              <IssueRow
+                issue={
+                  Object {
+                    "assignee": null,
+                    "assignees": Array [],
+                    "author_association": "CONTRIBUTOR",
+                    "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                    "closed_at": null,
+                    "comments": 2,
+                    "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                    "created_at": "2018-12-20T13:40:35Z",
+                    "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                    "html_url": "https://github.com/facebook/react/issues/14476",
+                    "id": 393051225,
+                    "labels": Array [
+                      Object {
+                        "color": "c2f27b",
+                        "default": false,
+                        "id": 1109410193,
+                        "name": "Component: Hooks",
+                        "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                        "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                      },
+                      Object {
+                        "color": "cc317c",
+                        "default": false,
+                        "id": 40929155,
+                        "name": "Type: Question",
+                        "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                        "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                      },
+                    ],
+                    "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                    "locked": false,
+                    "milestone": null,
+                    "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                    "number": 14476,
+                    "repository_url": "https://api.github.com/repos/facebook/react",
+                    "state": "open",
+                    "title": "useCallback/useEffect support custom comparator",
+                    "updated_at": "2018-12-20T16:40:00Z",
+                    "url": "https://api.github.com/repos/facebook/react/issues/14476",
+                  }
+                }
+              />,
+            ],
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": "14476",
+            "nodeType": "function",
+            "props": Object {
+              "issue": Object {
+                "assignee": null,
+                "assignees": Array [],
+                "author_association": "CONTRIBUTOR",
+                "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                "closed_at": null,
+                "comments": 2,
+                "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                "created_at": "2018-12-20T13:40:35Z",
+                "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                "html_url": "https://github.com/facebook/react/issues/14476",
+                "id": 393051225,
+                "labels": Array [
+                  Object {
+                    "color": "c2f27b",
+                    "default": false,
+                    "id": 1109410193,
+                    "name": "Component: Hooks",
+                    "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                    "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                  },
+                  Object {
+                    "color": "cc317c",
+                    "default": false,
+                    "id": 40929155,
+                    "name": "Type: Question",
+                    "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                    "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                  },
+                ],
+                "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                "locked": false,
+                "milestone": null,
+                "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                "number": 14476,
+                "repository_url": "https://api.github.com/repos/facebook/react",
+                "state": "open",
+                "title": "useCallback/useEffect support custom comparator",
+                "updated_at": "2018-12-20T16:40:00Z",
+                "url": "https://api.github.com/repos/facebook/react/issues/14476",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "as": "table",
+        "celled": true,
+        "children": Array [
+          <TableHeader
+            as="thead"
+          >
+            <TableRow
+              as="tr"
+              cellAs="td"
+            >
+              <TableHeaderCell
+                as="th"
+              >
+                Issue #
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Title
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Created At
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Updated At
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Labels
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                State
+              </TableHeaderCell>
+            </TableRow>
+          </TableHeader>,
+          <TableBody
+            as="tbody"
+          >
+            <IssueRow
+              issue={
+                Object {
+                  "assignee": null,
+                  "assignees": Array [],
+                  "author_association": "CONTRIBUTOR",
+                  "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                  "closed_at": null,
+                  "comments": 2,
+                  "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                  "created_at": "2018-12-20T13:40:35Z",
+                  "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                  "html_url": "https://github.com/facebook/react/issues/14476",
+                  "id": 393051225,
+                  "labels": Array [
+                    Object {
+                      "color": "c2f27b",
+                      "default": false,
+                      "id": 1109410193,
+                      "name": "Component: Hooks",
+                      "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                      "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                    },
+                    Object {
+                      "color": "cc317c",
+                      "default": false,
+                      "id": 40929155,
+                      "name": "Type: Question",
+                      "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                      "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                    },
+                  ],
+                  "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                  "locked": false,
+                  "milestone": null,
+                  "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                  "number": 14476,
+                  "repository_url": "https://api.github.com/repos/facebook/react",
+                  "state": "open",
+                  "title": "useCallback/useEffect support custom comparator",
+                  "updated_at": "2018-12-20T16:40:00Z",
+                  "url": "https://api.github.com/repos/facebook/react/issues/14476",
+                }
+              }
+            />
+          </TableBody>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "thead",
+            "children": <TableRow
+              as="tr"
+              cellAs="td"
+            >
+              <TableHeaderCell
+                as="th"
+              >
+                Issue #
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Title
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Created At
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Updated At
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                Labels
+              </TableHeaderCell>
+              <TableHeaderCell
+                as="th"
+              >
+                State
+              </TableHeaderCell>
+            </TableRow>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": "tr",
+              "cellAs": "td",
+              "children": Array [
+                <TableHeaderCell
+                  as="th"
+                >
+                  Issue #
+                </TableHeaderCell>,
+                <TableHeaderCell
+                  as="th"
+                >
+                  Title
+                </TableHeaderCell>,
+                <TableHeaderCell
+                  as="th"
+                >
+                  Created At
+                </TableHeaderCell>,
+                <TableHeaderCell
+                  as="th"
+                >
+                  Updated At
+                </TableHeaderCell>,
+                <TableHeaderCell
+                  as="th"
+                >
+                  Labels
+                </TableHeaderCell>,
+                <TableHeaderCell
+                  as="th"
+                >
+                  State
+                </TableHeaderCell>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "Issue #",
+                },
+                "ref": null,
+                "rendered": "Issue #",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "Title",
+                },
+                "ref": null,
+                "rendered": "Title",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "Created At",
+                },
+                "ref": null,
+                "rendered": "Created At",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "Updated At",
+                },
+                "ref": null,
+                "rendered": "Updated At",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "Labels",
+                },
+                "ref": null,
+                "rendered": "Labels",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "as": "th",
+                  "children": "State",
+                },
+                "ref": null,
+                "rendered": "State",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": "tbody",
+            "children": Array [
+              false,
+              Array [
+                <IssueRow
+                  issue={
+                    Object {
+                      "assignee": null,
+                      "assignees": Array [],
+                      "author_association": "CONTRIBUTOR",
+                      "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                      "closed_at": null,
+                      "comments": 2,
+                      "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                      "created_at": "2018-12-20T13:40:35Z",
+                      "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                      "html_url": "https://github.com/facebook/react/issues/14476",
+                      "id": 393051225,
+                      "labels": Array [
+                        Object {
+                          "color": "c2f27b",
+                          "default": false,
+                          "id": 1109410193,
+                          "name": "Component: Hooks",
+                          "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                          "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                        },
+                        Object {
+                          "color": "cc317c",
+                          "default": false,
+                          "id": 40929155,
+                          "name": "Type: Question",
+                          "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                          "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                        },
+                      ],
+                      "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                      "locked": false,
+                      "milestone": null,
+                      "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                      "number": 14476,
+                      "repository_url": "https://api.github.com/repos/facebook/react",
+                      "state": "open",
+                      "title": "useCallback/useEffect support custom comparator",
+                      "updated_at": "2018-12-20T16:40:00Z",
+                      "url": "https://api.github.com/repos/facebook/react/issues/14476",
+                    }
+                  }
+                />,
+              ],
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": "14476",
+              "nodeType": "function",
+              "props": Object {
+                "issue": Object {
+                  "assignee": null,
+                  "assignees": Array [],
+                  "author_association": "CONTRIBUTOR",
+                  "body": "Currently we can pass an array as second argument when using \`useCallback\` or \`useEffect\` like below:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+}, [a, b]) // how to do deep equal if a is an object ?
+\`\`\`
+
+The problem is it only compare array items with \`===\`,  it there any way to compare complex object ? 
+
+Support custom comparator as third argument looks not bad:
+
+\`\`\`js
+useCallback(()=> {
+  doSth(a, b)
+  }, 
+  [complexObject], 
+  (item, previousItem)=> { //custom compare logic, return true || false here }
+)
+\`\`\`
+",
+                  "closed_at": null,
+                  "comments": 2,
+                  "comments_url": "https://api.github.com/repos/facebook/react/issues/14476/comments",
+                  "created_at": "2018-12-20T13:40:35Z",
+                  "events_url": "https://api.github.com/repos/facebook/react/issues/14476/events",
+                  "html_url": "https://github.com/facebook/react/issues/14476",
+                  "id": 393051225,
+                  "labels": Array [
+                    Object {
+                      "color": "c2f27b",
+                      "default": false,
+                      "id": 1109410193,
+                      "name": "Component: Hooks",
+                      "node_id": "MDU6TGFiZWwxMTA5NDEwMTkz",
+                      "url": "https://api.github.com/repos/facebook/react/labels/Component:%20Hooks",
+                    },
+                    Object {
+                      "color": "cc317c",
+                      "default": false,
+                      "id": 40929155,
+                      "name": "Type: Question",
+                      "node_id": "MDU6TGFiZWw0MDkyOTE1NQ==",
+                      "url": "https://api.github.com/repos/facebook/react/labels/Type:%20Question",
+                    },
+                  ],
+                  "labels_url": "https://api.github.com/repos/facebook/react/issues/14476/labels{/name}",
+                  "locked": false,
+                  "milestone": null,
+                  "node_id": "MDU6SXNzdWUzOTMwNTEyMjU=",
+                  "number": 14476,
+                  "repository_url": "https://api.github.com/repos/facebook/react",
+                  "state": "open",
+                  "title": "useCallback/useEffect support custom comparator",
+                  "updated_at": "2018-12-20T16:40:00Z",
+                  "url": "https://api.github.com/repos/facebook/react/issues/14476",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
