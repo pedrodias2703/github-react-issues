@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import IssueRow from './IssueRow';
+import IssueRow from '../Row';
 
 const data = {
   url: 'https://api.github.com/repos/facebook/react/issues/14476',

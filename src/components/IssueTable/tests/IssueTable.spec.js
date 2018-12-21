@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import IssueTable from './IssueTable';
+import IssueTable from '..';
 
 const data = [
   {
